@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import React, { useState } from "react";
 import "./lutDemo.css";
 
@@ -31,16 +32,16 @@ const LutDemo = () => {
   };
 
   const convert = async () => {
-    let tStart = new Date().getTime();
+    const tStart = new Date().getTime();
     setMessage("Loading ffmpeg...");
     if (!ffmpeg.isLoaded()) await ffmpeg.load();
 
     setMessage("Start converting...");
     ffmpeg.FS("writeFile", "target.jpg", await fetchFile(beforeImgSrc));
     ffmpeg.FS("writeFile", "target.cube", await fetchFile(lutSrc));
-    // ffmpeg -i "{IMG_NAME}.jpg" \
-    // -vf lut3d="{LUT_NAME}.cube" \
-    // -q:v 1 -y "{OUT_NAME}.jpg" \
+    // ffmpeg -i '{IMG_NAME}.jpg' \
+    // -vf lut3d='{LUT_NAME}.cube' \
+    // -q:v 1 -y '{OUT_NAME}.jpg' \
     await ffmpeg.run(
       "-i",
       "target.jpg",
@@ -58,7 +59,7 @@ const LutDemo = () => {
     saveAfterFileImage(dataBlob);
     setMessage("Convert completed!");
 
-    let tEnd = new Date().getTime();
+    const tEnd = new Date().getTime();
     console.log("Elapsed Time: " + (tEnd - tStart) + " ms");
     setElapsedTime(String(tEnd - tStart));
   };
@@ -81,7 +82,11 @@ const LutDemo = () => {
         <div className="title">
           <div className="upload-title">
             Upload image...<br></br>
-            <input type="file" accept="image/*" onChange={saveBeforeFileImage} />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={saveBeforeFileImage}
+            />
           </div>
           <div className="upload-title">
             Upload LUT...<br></br>
