@@ -1,14 +1,16 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
   extends: [
     "google",
-    // "plugin:prettier/recommended",
+    // "prettier",
+    "eslint:recommended",
     "plugin:react/recommended",
-    // 'eslint:recommended',
-    'eslint-config-prettier'
+    "plugin:prettier/recommended",
+    // "eslint-config-prettier",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -18,5 +20,9 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "prettier"],
-  rules: {},
+  rules: {
+    "no-unused-vars": "warn",
+    "prettier/prettier": ["warn", { endOfLine: "auto" }],
+    // "react/prop-types": "off"
+  },
 };
