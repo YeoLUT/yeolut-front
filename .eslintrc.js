@@ -7,7 +7,7 @@ module.exports = {
     "google",
     // "plugin:prettier/recommended",
     "plugin:react/recommended",
-    // // 'eslint:recommended',
+    // 'eslint:recommended',
     'eslint-config-prettier'
   ],
   parserOptions: {
