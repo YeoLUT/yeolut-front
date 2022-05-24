@@ -1,15 +1,23 @@
-.black-nav {
-  background: rgb(41, 41, 41);
-  width: 100%;
-  display: flex;
-  color: white;
-  padding: 20px;
-  font-weight: 700;
-  font-size: 20px;
+.container {
+  margin: 0px;
 }
-.container{
-  padding:20px;
+.thumbnail {
+  /* max-width: 500px; */
+  border-radius: 10px;
+  overflow: hidden;
+  isolation: isolate;
 }
+
+.content {
+  margin: 5px;
+}
+
+/* @media screen and (min-width: 40em) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+} */
 .list {
   margin-top: 30px;
   text-align: left;
@@ -18,11 +26,5 @@
 
 .title {
   /* padding: 20px; */
-  display:flex;
-}
-
-img {
-  margin-top: 30px;
-  max-width: 100%;
-  height: auto;
+  display: flex;
 }

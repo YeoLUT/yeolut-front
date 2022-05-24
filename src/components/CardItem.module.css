@@ -1,0 +1,48 @@
+.card-container {
+  max-width: 400px;
+  max-height: 300px;
+}
+.card-thumbnail {
+  max-height: 225px;
+}
+/* TODO: fix aspect change on mobile */
+.card-thumbnail img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 225px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-content {
+  padding: 15px 0px;
+}
+.card-content-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+.card-content-title {
+  font-size: 18px;
+}
+.card-content-logname {
+  font-size: 12px;
+  color: #ff9f5c;
+}
+.card-hr {
+  margin: 5px 0px;
+  color: #a6a6a6;
+}
+.card-extra {
+  display: flex;
+  margin: 5px 0px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.card-extra-statics {
+  text-decoration-color: #777777;
+}
+.card-extra-author {
+  font-weight: 500;
+}
