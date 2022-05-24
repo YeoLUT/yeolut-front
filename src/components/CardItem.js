@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./CardItem.module.css";
