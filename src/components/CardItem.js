@@ -29,17 +29,17 @@ function CardItem(props) {
       </div>
       <div className={cs("card-content")}>
         <div className={cs("card-content-titlebar")}>
-          <span className={cs("card-content-title")}>{props.name}</span>
-          <span className={cs("card-content-logname")}>{props.logname}</span>
+          <span className={cs("card-content", "title")}>{props.name}</span>
+          <span className={cs("card-content", "logname")}>{props.logname}</span>
         </div>
         <hr className={cs("card-hr")}></hr>
         <div className={cs("card-extra")}>
-          <div className={cs("card-extra-author")}>{props.author}</div>
-          <div className={cs("card-extra-statics")}>
-            <span className={cs("card-extra-thumb")}>
+          <div className={cs("card-extra", "author")}>{props.author}</div>
+          <div className={cs("card-extra", "statics")}>
+            <span className={cs("thumb", "icons")}>
               <FiThumbsUp /> {props.like}
             </span>
-            <span className={cs("card-extra-download")}>
+            <span className={cs("download", "icons")}>
               <FiDownload /> {props.download}
             </span>
           </div>

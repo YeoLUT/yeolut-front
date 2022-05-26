@@ -1,21 +1,19 @@
 .card-container {
-  max-width: 400px;
-  max-height: 300px;
+  max-width: 25rem;
+  max-height: 20rem;
 }
 .card-thumbnail {
-  max-height: 225px;
+  max-height: 14rem;
+  margin-bottom: 1rem;
 }
 /* TODO: fix aspect change on mobile */
 .card-thumbnail img {
-  margin:0;
+  margin: 0;
   width: 100%;
-  max-width: 400px;
-  max-height: 225px;
+  max-width: 25rem;
+  max-height: 14rem;
   object-fit: cover;
-  border-radius: 10px;
-}
-.card-content {
-  padding: 15px 0px;
+  border-radius: 0.625rem;
 }
 .card-content-titlebar {
   display: flex;
@@ -23,27 +21,31 @@
   align-items: center;
   font-weight: 500;
 }
-.card-content-title {
-  font-size: 18px;
+.title {
+  font-size: 1.125rem;
 }
-.card-content-logname {
-  font-size: 12px;
+.logname {
+  font-size: 0.75rem;
   color: #ff9f5c;
 }
 .card-hr {
-  margin: 5px 0px;
+  margin: 0.3rem 0px;
   color: #a6a6a6;
 }
 .card-extra {
   display: flex;
-  margin: 5px 0px;
+  margin: 0.3rem 0px;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
-.card-extra-statics {
-  text-decoration-color: #777777;
+.statics {
+  font-weight:500;
+  color: #777777;
 }
-.card-extra-author {
+.icons{
+  margin-left:.75rem;
+}
+.author {
   font-weight: 500;
 }
