@@ -1,0 +1,29 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.25rem;
+  width: 100%;
+  padding: 0;
+  font-weight: 500;
+  /* background-color: black; */
+}
+.title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  height: 2.25rem;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #777777;
+  width: 18.75rem;
+  height: 2.25rem;
+}
+.selected {
+  font-weight: 500;
+  color: black;
+  border-bottom: 0.2rem solid black;
+}
