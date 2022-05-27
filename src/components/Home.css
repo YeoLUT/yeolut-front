@@ -39,13 +39,12 @@
 @media all and (min-width: 768px) {
   .container-home {
     display: grid;
-    max-width: 80rem;
+    max-width: 120rem;
     padding: 0;
     grid-template-columns: 1fr;
     justify-content: center;
     grid-row: 1;
     grid-column: 3;
-    border: 1px solid red;
   }
   .nav {
     max-width: 100%;
@@ -53,12 +52,12 @@
 
   .body-home {
     display: grid;
-    grid-row-gap: 3.75rem;
+    grid-row-gap: 3rem;
     grid-column-gap:2.5rem;
     padding: 0;
     justify-content: space-between;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, max-content));
   }
   .trend-subtitle {
     margin-left: 20px;
