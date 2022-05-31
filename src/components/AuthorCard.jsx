@@ -23,17 +23,15 @@ export default function AuthorCard(props) {
       <div className={cs("author-pic")}>
         <img src={props.picSrc} />
       </div>
-      <div className={cs("author-content")}>
-        <div className={cs("author-name")}> {props.name} </div>
-        <div className={cs("author-statics")}>
-          <span>
-            <FiThumbsUp /> {" " + props.likes}
-          </span>
-          <span>
-            <FiDownload />
-            {" " + props.downloads}
-          </span>
-        </div>
+      <div className={cs("author-name")}> {props.name} </div>
+      <div className={cs("author-statics")}>
+        <span>
+          <FiThumbsUp /> {" " + props.likes}
+        </span>
+        <span>
+          <FiDownload />
+          {" " + props.downloads}
+        </span>
       </div>
       <button className={cs("button-profile")}>프로필</button>
     </div>
