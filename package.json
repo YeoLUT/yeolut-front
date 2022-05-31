@@ -31,7 +31,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "zeplin-connect": "zeplin connect",
+    "zeplin-connect-dev-mode": "zeplin connect --dev"
   },
   "eslintConfig": {
     "extends": [
@@ -74,6 +76,9 @@
     "@storybook/preset-create-react-app": "^4.1.1",
     "@storybook/react": "^6.5.5",
     "@storybook/testing-library": "^0.0.11",
+    "@zeplin/cli": "2.0.0",
+    "@zeplin/cli-connect-react-plugin": "1.1.1",
+    "@zeplin/cli-connect-storybook-plugin": "2.0.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",

@@ -1,6 +1,7 @@
 import React from "react";
 import CardItem from "./CardItem";
 import NavBar from "./NavBar";
+import AuthorCard from "./AuthorCard";
 import "./Home.css";
 
 const publicImgSrc = (src) => {
@@ -16,14 +17,22 @@ function Home() {
         <NavBar status={1} />
       </nav>
       <main className="main-home">
-        <div className="trend-container">
-          <div className="trend-title-container">
+        <div className="container-trend">
+          <div className="container-trend-title">
             <span className="trend-title">트렌드 LUTs 작가</span>
             <span className="trend-subtitle">
               지금 뜨고 있는 작가들의 트렌디한 LUT을 살펴보세요!
             </span>
           </div>
-          <div className="trend-content"></div>
+          <div className="trend-content hs scrolling-wrapper">
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+            <AuthorCard name="Author's Name" likes={34000} downloads={12900} />
+          </div>
         </div>
         <div className="body-home">
           <CardItem

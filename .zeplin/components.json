@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-react-plugin"
+    },
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "http://localhost:6006/",
+        "format": "new",
+        "startScript": "storybook"
+      }
+    }
+  ],
+  "styleguides": [
+    "628c7b430bd0c9bb48ec46ab"
+  ],
+  "components": [
+    {
+      "path": "src/components/AuthorCard.jsx",
+      "zeplinIds": [
+        "628c7c8cbe9ea5ba71558f36"
+      ]
+    }
+  ],
+  "github": {
+    "repository": "raonsol/yeolut-front"
+  }
+}

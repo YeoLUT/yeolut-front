@@ -10,6 +10,7 @@
   grid-auto-rows: minmax(100px, auto);
   grid-template-columns: 1fr;
   grid-gap: 20px;
+  /* overflow: hidden; */
 }
 .body-home {
   display: grid;
@@ -17,7 +18,7 @@
   grid-gap: 2rem;
   justify-content: center;
 }
-.trend-title-container {
+.container-trend-title {
   font-weight: bold;
 }
 .trend-title {
@@ -27,20 +28,44 @@
   font-weight: 500;
   font-size: 1rem;
   color: #777777;
-  display:block;
+  display: block;
 }
 .footer-home {
   text-align: center;
   margin: 2rem;
   font-weight: 500;
 }
+.container-trend {
+  width: 100%;
+  overflow: hidden;
+}
+.trend-content{
+  margin: 2.5rem 0rem;
+}
+.footer-home{
+  margin:5rem 0rem;
+  background-color: #e8e8e8;
+}
+
+.hs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scrollbar-width: none;
+}
+.hs::-webkit-scrollbar {
+  display: none;
+}
 
 /* desktop */
 @media all and (min-width: 768px) {
   .container-home {
     display: grid;
-    max-width: 120rem;
-    padding: 0;
+    /* max-width: 30rem; */
+    /* min-height: 0;
+    min-width: 0; */
+    /* overflow:hidden; */
     grid-template-columns: 1fr;
     justify-content: center;
     grid-row: 1;
@@ -53,7 +78,7 @@
   .body-home {
     display: grid;
     grid-row-gap: 3rem;
-    grid-column-gap:2.5rem;
+    grid-column-gap: 2.5rem;
     padding: 0;
     justify-content: space-between;
     grid-auto-rows: auto;

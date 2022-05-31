@@ -1,0 +1,41 @@
+.author-container{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  width: 13.75rem;
+  height: 13.75rem;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  border: solid 1px #e8e8e8;
+  padding:1.3rem 0rem;
+  font-weight:500;
+}
+.author-name{
+  font-size: 1.125rem;
+  margin-bottom: .3rem;
+}
+.author-pic{
+  background-color:#cccccc;
+  width: 4rem;
+  aspect-ratio:1;
+  border-radius: 50%;
+  margin:.6rem;
+}
+.author-statics{
+  display: flex;
+  justify-content: space-between;
+  font-weight: normal;
+  color: #777777;
+  font-size: .9rem;
+  gap:.5rem;
+}
+.button-profile{
+  border-radius: 15px;
+  border: solid 1px #f89d22;
+  background-color: white;
+  font-size: 0.75rem;
+  color: #f89d22;
+  margin-top: 1rem;
+  padding: 0.3rem 1rem;
+}
