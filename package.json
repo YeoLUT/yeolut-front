@@ -80,6 +80,7 @@
     "@zeplin/cli-connect-react-plugin": "1.1.1",
     "@zeplin/cli-connect-storybook-plugin": "2.0.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "chromatic": "^6.5.6",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-google": "^0.14.0",
