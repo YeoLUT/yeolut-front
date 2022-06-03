@@ -1,0 +1,52 @@
+.pm-container{
+  border: 2px solid #e8e8e8;
+  border-radius: 5px;
+  width: 13rem;
+  height: 13rem;
+  padding: .8rem;
+  font-weight: normal;
+  font-size:0.75rem;
+  color: #777777;
+  display: flex;
+  flex-direction: column;
+}
+
+.pm-profile{
+  border-bottom: 1px solid #e8e8e8;
+  display:flex; 
+  padding-bottom:.8rem;
+  gap: .5rem;
+  align-items:center;
+}
+.pm-menu1{
+  padding:.8rem 0rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+.pm-menu2{
+  padding:.8rem 0rem;
+}
+
+.author-name{
+  font-size: 1rem;
+  color: black;
+}
+.author-email{
+  font-size: .6rem;
+}
+.pm-profile-pic{
+  width:1.875rem;
+  height:1.875rem;
+  border-radius:50%;
+  background-color: #e8e8e8;
+}
+ul{
+  list-style:none;
+  padding: 0px;
+  margin:0px;
+  line-height:2;
+  /* border-bottom: 1px solid #e8e8e8; */
+}
+
+.background-grey{
+  background-color: #e8e8e8;
+}
