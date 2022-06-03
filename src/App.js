@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LutDemo from "./lutDemo.js";
-import Home from "./components/Home.js";
+import LutDemo from "./pages/lutDemo.js";
+import Home from "./pages/Home.js";
 import "./App.css";
 
 // eslint-disable-next-line require-jsdoc

@@ -50,7 +50,7 @@ const LutDemo = () => {
       "-q:v",
       "1",
       "-y",
-      "result.jpg"
+      "result.jpg",
     );
     const data = ffmpeg.FS("readFile", "result.jpg");
     const dataBlob = new Blob([data.buffer], { type: "image/jpeg" });

@@ -1,7 +1,7 @@
 import React from "react";
-import CardItem from "./CardItem";
-import NavBar from "./NavBar";
-import AuthorCard from "./AuthorCard";
+import CardItem from "../components/CardItem";
+import NavBar from "../components/NavBar";
+import AuthorCard from "../components/AuthorCard";
 import "./Home.css";
 
 const publicImgSrc = (src) => {
