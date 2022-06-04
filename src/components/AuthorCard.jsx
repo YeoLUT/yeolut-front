@@ -21,7 +21,7 @@ export default function AuthorCard(props) {
   return (
     <div className={cs("author-container")}>
       <div className={cs("author-pic")}>
-        <img src={props.picSrc} />
+        <img crossOrigin="" src={props.picSrc} />
       </div>
       <div className={cs("author-name")}> {props.name} </div>
       <div className={cs("author-statics")}>
