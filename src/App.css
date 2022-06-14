@@ -3,3 +3,8 @@
   padding: 0;
   transition: 0.3s ease-in-out 0.3s;
 }
+
+footer{
+  margin-top:2rem;
+  width:100%;
+}

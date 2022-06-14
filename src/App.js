@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LutDemo from "./pages/lutDemo.js";
+import Footer from "./components/Footer";
 import Home from "./pages/Home.js";
 import "./App.css";
 
@@ -12,6 +13,9 @@ function App() {
         {/* <LutDemo></LutDemo> */}
         <Home></Home>
       </div>
+      <footer className="footer-home">
+        <Footer />
+      </footer>
     </div>
   );
 }
