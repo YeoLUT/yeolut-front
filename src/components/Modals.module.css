@@ -1,0 +1,53 @@
+.container-modal {
+  border: solid 1px #cccccc;
+  border-radius: 10px;
+  font-weight: normal;
+  color: #777777;
+  background-color: white;
+  font-size: 1rem;
+  padding: 1.25rem;
+  margin-top: 0.5rem;
+  max-width: 30rem;
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-30%);
+}
+/* TODO: fix column breaking on mobile */
+ul {
+  list-style-type: none;
+  padding: 0;
+  columns:1;
+}
+.btn {
+  border-radius: 20px;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.btn-disabled {
+  border: solid 1px #aaa;
+  background-color: white;
+  color: #777777;
+}
+.btn-active {
+  border: solid 1px #a1a1a1;
+  background-color: #a1a1a1;
+  color: white;
+}
+.btn-font {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+
+/* desktop */
+@media all and (min-width: 768px) {
+  ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+  .container-modal{
+    transform: translateX(-75%);
+  }
+}

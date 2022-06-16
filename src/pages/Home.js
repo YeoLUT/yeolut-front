@@ -1,9 +1,21 @@
-import React from "react";
-import CardItem from "../components/CardItem";
+import React, { useState, useRef } from "react";
 import NavBar from "../components/NavBar";
+import CardItem from "../components/CardItem";
 import AuthorCard from "../components/AuthorCard";
+import { ModalButton, ModalItem } from "../components/Modals";
+
 import "./Home.css";
-import { MdExpandMore } from "react-icons/md";
+
+import {
+  gammaExample,
+  styleExample,
+  colorExample,
+} from "../scripts/demoContents";
+import {
+  MdExpandMore,
+  MdArrowForwardIos,
+  MdArrowBackIos,
+} from "react-icons/md";
 
 const isDemo = true;
 
@@ -52,37 +64,63 @@ const createDemoLutCard = (n) => {
     />
   ));
 };
+const handleThumbnail = (e) => {};
 
 // eslint-disable-next-line require-jsdoc
 function Home() {
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const dimmerRef = useRef();
+  // const openGammaModal = () => {
+  //   setIsModalOpen(true);
+  // };
+  // const closeModal = () => {
+  //   if (isModalOpen === true) return setIsModalOpen(false);
+  // };
+
   return (
     <div className="container-home">
+      {/* {isModalOpen && <div className="dimmer" ref={dimmerRef} />} */}
       <nav className="nav">
         <NavBar status={1} />
       </nav>
       <main className="main-home">
         <div className="container-trend">
-          <div className="container-trend-title">
-            <span className="trend-title">트렌드 LUTs 작가</span>
-            <span className="trend-subtitle">
-              지금 뜨고 있는 작가들의 트렌디한 LUT을 살펴보세요!
-            </span>
+          <div className="container-trend-bar">
+            <div className="container-trend-title">
+              <span className="trend-title">트렌드 LUTs 작가</span>
+              <span className="trend-subtitle">
+                지금 뜨고 있는 작가들의 트렌디한 LUT을 살펴보세요!
+              </span>
+            </div>
+            <div className="trend-navigator">
+              <MdArrowBackIos />
+              <MdArrowForwardIos />
+            </div>
           </div>
           <div className="trend-content hs scrolling-wrapper">
             {isDemo && createDemoAuthor(10)}
           </div>
         </div>
         <div className="container-filters">
-          <button className="btn-primary btn-font"> 썸네일 업로드 </button>
-          <button className="btn-dropdown btn-font">
-            Gamma <MdExpandMore />
-          </button>
-          <button className="btn-dropdown btn-font">
-            Style <MdExpandMore />
-          </button>
-          <button className="btn-dropdown btn-font">
-            Color <MdExpandMore />
-          </button>
+          <label className="btn-primary btn-font" htmlFor="input-thumbnail">
+            썸네일 업로드
+          </label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleThumbnail}
+            id="input-thumbnail"
+            style={{ display: "none" }}
+          />
+          <ModalButton name="Gamma">
+            <ModalItem items={isDemo && gammaExample} />
+          </ModalButton>
+          <ModalButton name="Style">
+            <ModalItem items={isDemo && styleExample} />
+          </ModalButton>
+          <ModalButton name="Color">
+            <ModalItem items={isDemo && colorExample} />
+          </ModalButton>
         </div>
         <div className="body-home">{isDemo && createDemoLutCard(30)}</div>
       </main>

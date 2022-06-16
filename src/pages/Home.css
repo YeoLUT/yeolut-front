@@ -21,6 +21,10 @@
 .container-trend-title {
   font-weight: bold;
 }
+.dimmer {
+  background-color: black;
+  opacity: 0.5;
+}
 .trend-title {
   font-size: 1.5rem;
 }
@@ -61,18 +65,25 @@
   color: white;
   background-color: #ff9f5c;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 0.7rem 1.5rem;
+}
+.btn-primary:hover {
+  background-color: #e87c2f;
+  transition: 0.3s;
 }
 .btn-dropdown {
   border-radius: 20px;
-  padding: 0.5rem 1rem;
   border: solid 1px #aaa;
   background-color: white;
   color: #777777;
+  align-items: center;
+  padding: 0.5rem 1rem;
 }
 .btn-font {
   font-weight: 500;
   font-size: 0.7rem;
+  line-height: 1rem;
+  text-align: center;
 }
 
 /* desktop */
@@ -87,6 +98,11 @@
     justify-content: center;
     grid-row: 1;
     grid-column: 3;
+  }
+  .container-trend-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .nav {
     max-width: 100%;
