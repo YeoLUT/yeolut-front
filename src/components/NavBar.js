@@ -15,7 +15,9 @@ NavBar.propTypes = {
 function NavBar(props) {
   return (
     <div className={cs("nav-container")}>
-      <div className={cs("title")}>여럿</div>
+      <div className={cs("nav-logo")}>
+        <img src="logo.svg" />
+      </div>
       <div className={cs("menu")}>
         <div
           className={cs("menu-popular", props.status == 1 ? "selected" : "")}
