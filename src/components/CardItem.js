@@ -4,16 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./CardItem.module.css";
 import classNames from "classnames/bind";
 import { FiThumbsUp, FiDownload } from "react-icons/fi";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 const cs = classNames.bind(styles);
 CardItem.propTypes = {
   name: PropTypes.string,
   src: PropTypes.string,
   author: PropTypes.string,
-  like: propTypes.number,
-  download: propTypes.number,
-  logname: propTypes.string,
+  like: PropTypes.number,
+  download: PropTypes.number,
+  logname: PropTypes.string,
 };
 
 /**
