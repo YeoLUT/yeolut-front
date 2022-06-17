@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import CardItem from "../components/CardItem";
 import AuthorCard from "../components/AuthorCard";
-import { ModalButton, ModalItem } from "../components/Modals";
+import { ModalButton, ModalItem, LoadingModal } from "../components/Modals";
+import { convertLutMulti } from "../scripts/convertLut";
 
 import "./Home.css";
 
@@ -11,15 +12,12 @@ import {
   styleExample,
   colorExample,
 } from "../scripts/demoContents";
-import {
-  MdExpandMore,
-  MdArrowForwardIos,
-  MdArrowBackIos,
-} from "react-icons/md";
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 
 const isDemo = true;
+const nDemo = 30;
 
-const publicImgSrc = (src) => {
+const publicSrc = (src) => {
   return process.env.PUBLIC_URL + src;
 };
 
@@ -40,42 +38,59 @@ async function getList(url) {
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const createDemoAuthor = (n) => {
-  return [...new Array(n)].map((_, idx) => (
-    <AuthorCard
-      key={idx}
-      name={"Author" + idx}
-      likes={rand(10, 10000)}
-      downloads={rand(10, 10000)}
-      picSrc={"https://picsum.photos/100/100?random=" + idx}
-    />
-  ));
-};
-const createDemoLutCard = (n) => {
-  return [...new Array(n)].map((_, idx) => (
-    <CardItem
-      key={idx}
-      name={"LUT" + idx}
-      src={"https://picsum.photos/500/400?random=" + idx}
-      logname="log name"
-      author="Sample author"
-      download={rand(10, 10000)}
-      like={rand(10, 10000)}
-    />
-  ));
-};
-const handleThumbnail = (e) => {};
-
 // eslint-disable-next-line require-jsdoc
 function Home() {
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const dimmerRef = useRef();
-  // const openGammaModal = () => {
-  //   setIsModalOpen(true);
-  // };
-  // const closeModal = () => {
-  //   if (isModalOpen === true) return setIsModalOpen(false);
-  // };
+  const [cardImgSrc, setCardImgSrc] = useState([]);
+  const [lutSrc, setLutSrc] = useState([]);
+  const [isConverting, setIsConverting] = useState(false);
+  if (isDemo) {
+    // useEffect to render once, preventing infinite loop
+    useEffect(() => {
+      setLutSrc(
+        [...new Array(nDemo)].map((_, idx) =>
+          publicSrc("/sampleLut/" + idx + ".cube"),
+        ),
+      );
+      setCardImgSrc(
+        [...new Array(nDemo)].map(
+          (_, idx) => "https://picsum.photos/500/400?random=" + idx,
+        ),
+      );
+    }, []);
+  }
+
+  const createDemoAuthor = (n) => {
+    return [...new Array(n)].map((_, idx) => (
+      <AuthorCard
+        key={idx}
+        name={"Author" + idx}
+        likes={rand(10, 10000)}
+        downloads={rand(10, 10000)}
+        picSrc={"https://picsum.photos/100/100?random=" + idx}
+      />
+    ));
+  };
+  const createDemoLutCard = (n) => {
+    return [...new Array(n)].map((_, idx) => (
+      <CardItem
+        key={idx}
+        name={"LUT" + idx}
+        src={cardImgSrc[idx]}
+        logname="log name"
+        author="Sample author"
+        download={rand(10, 10000)}
+        like={rand(10, 10000)}
+      />
+    ));
+  };
+
+  const handleThumbnail = async (e) => {
+    setIsConverting(true);
+    const thumbnailSrc = URL.createObjectURL(e.target.files[0]);
+    await convertLutMulti(thumbnailSrc, lutSrc, setCardImgSrc);
+    setIsConverting(false);
+  };
+  // TODO: ffmpeg.wasm은 병렬실행 불가, 여러번 실행시 메모리로 인해 성능저하
 
   return (
     <div className="container-home">
@@ -112,6 +127,7 @@ function Home() {
             id="input-thumbnail"
             style={{ display: "none" }}
           />
+          {isConverting && <LoadingModal size={30} />}
           <ModalButton name="Gamma">
             <ModalItem items={isDemo && gammaExample} />
           </ModalButton>
@@ -122,7 +138,7 @@ function Home() {
             <ModalItem items={isDemo && colorExample} />
           </ModalButton>
         </div>
-        <div className="body-home">{isDemo && createDemoLutCard(30)}</div>
+        <div className="body-home">{isDemo && createDemoLutCard(nDemo)}</div>
       </main>
     </div>
   );

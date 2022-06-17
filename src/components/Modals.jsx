@@ -3,6 +3,7 @@ import styles from "./Modals.module.css";
 import classNames from "classnames/bind";
 import PropTypes from "prop-types";
 import { MdExpandMore } from "react-icons/md";
+import { FlagSpinner } from "react-spinners-kit";
 const cs = classNames.bind(styles);
 
 ModalItem.propTypes = {
@@ -14,7 +15,7 @@ ModalItem.propTypes = {
  */
 function ModalItem({ items }) {
   return (
-    <div className={cs("container-modal")}>
+    <div className={cs("container-modal", "items")}>
       <ul>
         {items.map((name) => (
           <li key={name}>{name}</li>
@@ -38,7 +39,7 @@ function ModalButton({ name, children }) {
     setIsModalOpen(!isModalOpen);
   };
   return (
-    <div className="container-modal-btn">
+    <div className={cs("container-modal-button")}>
       <button
         className={cs(
           "btn",
@@ -54,4 +55,22 @@ function ModalButton({ name, children }) {
   );
 }
 
-export { ModalButton, ModalItem };
+LoadingModal.propTypes = {
+  size: PropTypes.number,
+};
+/**
+ * @param {*} props
+ * @return {HTML}
+ */
+function LoadingModal({ size }) {
+  return (
+    <div className={cs("loading-background")}>
+      <div className={cs("conatiner-modal", "loading")}>
+        <FlagSpinner size={size} color="#e87c2f" />
+        변환 중...
+      </div>
+    </div>
+  );
+}
+
+export { ModalButton, ModalItem, LoadingModal };

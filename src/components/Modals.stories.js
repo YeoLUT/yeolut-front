@@ -1,5 +1,5 @@
 import React from "react";
-import { ModalButton, ModalItem } from "./Modals";
+import { ModalButton, ModalItem, LoadingModal } from "./Modals";
 import {
   gammaExample,
   styleExample,
@@ -9,7 +9,7 @@ import {
 export default {
   title: "Filter buttons",
   component: ModalButton,
-  subcomponents: { ModalItem },
+  subcomponents: { ModalItem, LoadingModal },
 };
 
 export const Gamma = () => (
@@ -26,6 +26,11 @@ export const Color = () => (
   <ModalButton name="Color">
     <ModalItem items={colorExample} />
   </ModalButton>
+);
+export const Loading = () => (
+  <div>
+    <LoadingModal size={30} />
+  </div>
 );
 
 // Gamma.story = {
